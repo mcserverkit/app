@@ -1,6 +1,11 @@
 #include "webview/webview.h"
 #include <stddef.h>
 
+static const char html[] =
+    "<body style=\"background-color:#222;color:white;font-family:Arial\">"
+    "Hello World"
+    "</body>";
+
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -20,7 +25,7 @@ int main(void)
     webview_t w = webview_create(0, NULL);
     webview_set_title(w, "MCServerKit GUI");
     webview_set_size(w, 480, 320, WEBVIEW_HINT_NONE);
-    webview_set_html(w, "<body style=\"background-color:#222;color:white;font-family:Arial\">Hello World</body>");
+    webview_set_html(w, html);
     webview_run(w);
     webview_destroy(w);
     return 0;
