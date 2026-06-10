@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 static const char html[] =
-    "<body>"
+    "<head>"
     "<style>"
     "body {"
     "   background-color: #222;"
@@ -18,6 +18,8 @@ static const char html[] =
     "   height: 64px;"
     "}"
     "</style>"
+    "</head>"
+    "<body>"
     "<nav>"
     "<div>"
     "<button>"
