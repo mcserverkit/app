@@ -2,8 +2,14 @@
 #include <stddef.h>
 
 static const char html[] =
-    "<body style=\"background-color:#222;color:white;font-family:Arial\">"
-    "Hello World"
+    "<body style=\"background-color:#222;color:white;font-family:Arial;\">"
+    "<nav style=\"background:#111;top:0;left:0;position:fixed;width:100%;height:64px;\">"
+    "<div>"
+    "<button>"
+    "MCServerKit"
+    "</button>"
+    "</div>"
+    "</nav>"
     "</body>";
 
 #ifdef _WIN32
