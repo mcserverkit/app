@@ -18,9 +18,9 @@ int main(void)
 {
 #endif
     webview_t w = webview_create(0, NULL);
-    webview_set_title(w, "Basic Example");
+    webview_set_title(w, "MCServerKit GUI");
     webview_set_size(w, 480, 320, WEBVIEW_HINT_NONE);
-    webview_set_html(w, "Thanks for using webview!");
+    webview_set_html(w, "<body style=\"background-color:#222;color:white;font-family:Arial\">Hello World</body>");
     webview_run(w);
     webview_destroy(w);
     return 0;
