@@ -39,6 +39,7 @@ static const char html[] =
     "           background: #ddd;"
     "       }"
     "       section {"
+    "           margin-top: 20px;"
     "           display: flex;"
     "           flex-direction: column;"
     "           align-items: center;"
