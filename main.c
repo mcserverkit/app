@@ -13,14 +13,6 @@ static const char html[] =
     "           color: white;"
     "           font-family: \"Inter\", Arial;"
     "       }"
-    "       nav {"
-    "           background: #111;"
-    "           top: 0;"
-    "           left: 0;"
-    "           position: fixed;"
-    "           width: 100%;"
-    "           height: 64px;"
-    "       }"
     "       button {"
     "           border: none;"
     "           padding: 8px 12px;"
@@ -35,11 +27,7 @@ static const char html[] =
     "   </style>"
     "</head>"
     "<body>"
-    "   <nav>"
-    "       <div>"
-    "           <button>MCServerKit</button>"
-    "       </div>"
-    "   </nav>"
+    ""
     "</body>";
 
 #ifdef _WIN32
