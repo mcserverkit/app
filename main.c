@@ -4,6 +4,11 @@
 static const char html[] =
     "<head>"
     "   <style>"
+    "       * {"
+    "           margin: 0;"
+    "           padding: 0;"
+    "           box-sizing: border-box;"
+    "       }"
     "       @font-face {"
     "           font-family: \"Inter\";"
     "           src: url(\"resources/fonts/Inter-VariableFont_opsz,wght.ttf\");"
