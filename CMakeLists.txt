@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(mcserverkit_gui LANGUAGES C CXX)
+project(mcserverkit_gui LANGUAGES CXX)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib")
@@ -15,8 +15,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(webview)
 
 add_executable(mcserverkit_gui MACOSX_BUNDLE WIN32)
-target_sources(mcserverkit_gui PRIVATE main.c)
-target_link_libraries(mcserverkit_gui PRIVATE webview::core_static)
+target_sources(mcserverkit_gui PRIVATE main.cc)
+target_link_libraries(mcserverkit_gui PRIVATE webview::core)
 
 if(WIN32)
     target_sources(mcserverkit_gui PRIVATE resources/windows/resources.rc)
