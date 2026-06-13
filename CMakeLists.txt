@@ -20,6 +20,10 @@ target_link_libraries(mcserverkit_gui PRIVATE webview::core)
 
 if(WIN32)
     target_sources(mcserverkit_gui PRIVATE resources/windows/resources.rc)
+elseif(APPLE)
+    set_target_properties(mcserverkit_gui PROPERTIES MACOSX_BUNDLE_ICON_FILE "icon.icns")
+    set_source_files_properties(resources/macos/icon.icns PROPERTIES MACOSX_PACKAGE_LOCATION "Resources")
+    target_sources(mcserverkit_gui PRIVATE resources/macos/icon.icns)
 endif()
 
 
