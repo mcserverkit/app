@@ -15,7 +15,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(webview)
 
 add_executable(mcserverkit_gui MACOSX_BUNDLE WIN32)
-target_sources(mcserverkit_gui PRIVATE main.cc)
+target_sources(mcserverkit_gui PRIVATE src/main.cc)
 target_link_libraries(mcserverkit_gui PRIVATE webview::core)
 
 if(WIN32)
