@@ -1,94 +1,95 @@
 #include "webview/webview.h"
-#include <stddef.h>
 
-static const char html[] =
-    "<head>\n"
-    "   <style>\n"
-    "       * {\n"
-    "           margin: 0;\n"
-    "           padding: 0;\n"
-    "           color: #fff;\n"
-    "           box-sizing: border-box;\n"
-    "       }\n"
-    "       @font-face {\n"
-    "           font-family: \"Inter\";\n"
-    "           src: url(\"resources/fonts/Inter-VariableFont_opsz,wght.ttf\");\n"
-    "       }\n"
-    "       body {\n"
-    "           background-color: #000;\n"
-    "           font-family: \"Inter\", Arial;\n"
-    "       }\n"
-    "       input {\n"
-    "           width: 280px;\n"
-    "           border: 1px solid #222;\n"
-    "           border-radius: 5px;\n"
-    "           background: #171717;\n"
-    "           font-size: 14px;\n"
-    "           padding: 12px 14px;\n"
-    "       }\n"
-    "       input:hover {\n"
-    "           border-color: #444;\n"
-    "       }\n"
-    "       input:focus {\n"
-    "           outline: none;"
-    "           border-color: #666;\n"
-    "       }\n"
-    "       button {\n"
-    "           color: #000;\n"
-    "           border: none;\n"
-    "           padding: 12px 14px;\n"
-    "           background: #fff;\n"
-    "           cursor: pointer;\n"
-    "           border-radius: 5px;\n"
-    "           transition: 150ms ease-in-out;\n"
-    "       }\n"
-    "       button:hover {\n"
-    "           background: #ddd;\n"
-    "       }\n"
-    "       section {\n"
-    "           margin-top: 20px;\n"
-    "           display: flex;\n"
-    "           flex-direction: column;\n"
-    "           align-items: center;\n"
-    "       }\n"
-    "       section > div {\n"
-    "           display: flex;\n"
-    "           flex-direction: row;\n"
-    "           align-items: center;\n"
-    "           gap: 8px;\n"
-    "       }\n"
-    "   </style>\n"
-    "</head>\n"
-    "<body>\n"
-    "   <section>\n"
-    "       <div>\n"
-    "           <button>Create server</button>\n"
-    "           <input type=\"text\" placeholder=\"Search Servers...\">\n"
-    "       </div>\n"
-    "   </section>\n"
-    "</body>\n";
+#include <iostream>
 
-#ifdef _WIN32
-#include <windows.h>
-#endif
+constexpr const auto html =
+    R"html(<head>
+       <style>
+           * {
+               margin: 0;
+               padding: 0;
+               color: #fff;
+               box-sizing: border-box;
+           }
+           @font-face {
+               font-family: "Inter";
+               src: url("resources/fonts/Inter-VariableFont_opsz,wght.ttf");
+           }
+           body {
+               background-color: #000;
+               font-family: "Inter", Arial;
+           }
+           input {
+               width: 280px;
+               border: 1px solid #222;
+               border-radius: 5px;
+               background: #171717;
+               font-size: 14px;
+               padding: 12px 14px;
+           }
+           input:hover {
+               border-color: #444;
+           }
+           input:focus {
+               outline: none;"
+               border-color: #666;
+           }
+           button {
+               color: #000;
+               border: none;
+               padding: 12px 14px;
+               background: #fff;
+               cursor: pointer;
+               border-radius: 5px;
+               transition: 150ms ease-in-out;
+           }
+           button:hover {
+               background: #ddd;
+           }
+           section {
+               margin-top: 20px;
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+           }
+           section > div {
+               display: flex;
+               flex-direction: row;
+               align-items: center;
+               gap: 8px;
+           }
+       </style>
+    </head>
+    <body>
+       <section>
+           <div>
+               <button>Create server</button>
+               <input type="text" placeholder="Search Servers...">
+           </div>
+       </section>
+    </body>)html";
 
 #ifdef _WIN32
-int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine,
-                   int nCmdShow)
+int WINAPI WinMain(HINSTANCE /*hInst*/, HINSTANCE /*hPrevInst*/,
+                   LPSTR /*lpCmdLine*/, int /*nCmdShow*/)
 {
-    (void)hInst;
-    (void)hPrevInst;
-    (void)lpCmdLine;
-    (void)nCmdShow;
 #else
-int main(void)
+int main()
 {
 #endif
-    webview_t w = webview_create(0, NULL);
-    webview_set_title(w, "MCServerKit GUI");
-    webview_set_size(w, 800, 500, WEBVIEW_HINT_NONE);
-    webview_set_html(w, html);
-    webview_run(w);
-    webview_destroy(w);
+    try
+    {
+        webview::webview w(false, nullptr);
+        w.set_title("MCServerKit GUI");
+        w.set_size(480, 320, WEBVIEW_HINT_NONE);
+        w.set_html(html);
+        w.run();
+    }
+    catch (const webview::exception &e)
+    {
+        std::cerr << e.what() << '\n';
+        return 1;
+    }
+
     return 0;
 }
