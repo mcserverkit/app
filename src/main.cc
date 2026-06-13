@@ -33,7 +33,7 @@ int main()
         // Switch to the directory of the actual binary
         chdir(dirname(path));
         // and then go up three directories to get to the folder of the .app bundle
-        chdir("../../Resources");
+        chdir("../Resources");
 #endif
         auto file = std::filesystem::absolute("ui/index.html");
         auto html = std::string("file:///") + file.generic_string();
