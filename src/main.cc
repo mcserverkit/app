@@ -17,7 +17,23 @@ int main()
         webview::webview w(false, nullptr);
         w.set_title("MCServerKit GUI");
         w.set_size(480, 320, WEBVIEW_HINT_FIXED);
+#ifdef __APPLE__
+// https://stackoverflow.com/questions/42600770/chdir-to-the-location-of-the-app-bundle-in-c-macos-application
+#include <unistd.h>      // for chdir
+#include <libgen.h>      // for dirname
+#include <mach-o/dyld.h> // for _NSGetExecutablePath
+#include <limits.h>      // for PATH_MAX?
 
+        char path[PATH_MAX];
+        uint32_t pathLen = sizeof(path);
+        int err = _NSGetExecutablePath(path, &pathLen);
+        assert(!err);
+
+        // Switch to the directory of the actual binary
+        chdir(dirname(path));
+        // and then go up three directories to get to the folder of the .app bundle
+        chdir("../../../");
+#endif
         auto file = std::filesystem::absolute("ui/index.html");
         auto html = std::string("file:///") + file.generic_string();
         w.navigate(html);
