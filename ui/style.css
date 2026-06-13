@@ -6,7 +6,7 @@
 }
 @font-face {
   font-family: "Inter";
-  src: url("resources/fonts/Inter-VariableFont_opsz,wght.ttf");
+  src: url("fonts/Inter-VariableFont_opsz,wght.ttf");
 }
 body {
   background-color: #000;
