@@ -81,7 +81,7 @@ int main()
     {
         webview::webview w(false, nullptr);
         w.set_title("MCServerKit GUI");
-        w.set_size(480, 320, WEBVIEW_HINT_NONE);
+        w.set_size(480, 320, WEBVIEW_HINT_FIXED);
         w.set_html(html);
         w.run();
     }
