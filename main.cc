@@ -31,7 +31,7 @@ constexpr const auto html =
                border-color: #444;
            }
            input:focus {
-               outline: none;"
+               outline: none;
                border-color: #666;
            }
            button {
