@@ -23,7 +23,7 @@ int main()
     {
         webview::webview w(false, nullptr);
         w.set_title("MCServerKit GUI");
-        w.set_size(480, 320, WEBVIEW_HINT_FIXED);
+        w.set_size(480, 480, WEBVIEW_HINT_FIXED);
 #ifdef __APPLE__
         char path[PATH_MAX];
         uint32_t pathLen = sizeof(path);
