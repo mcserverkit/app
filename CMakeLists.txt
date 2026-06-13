@@ -29,7 +29,11 @@ elseif(APPLE)
 endif()
 
 # https://stackoverflow.com/questions/13429656/how-to-copy-contents-of-a-directory-into-build-directory-after-make-with-cmake
-add_custom_command(TARGET mcserverkit_gui POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ui ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/ui)
+if (APPLE)
+    add_custom_command(TARGET mcserverkit_gui POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ui $<TARGET_BUNDLE_CONTENT_DIR:mcserverkit_gui>/Resources/ui)
+else()
+    add_custom_command(TARGET mcserverkit_gui POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ui ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/ui)
+endif()
 
 if (MSVC)
     target_compile_definitions(mcserverkit_gui PRIVATE _CRT_SECURE_NO_WARNINGS)
