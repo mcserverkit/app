@@ -26,6 +26,8 @@ elseif(APPLE)
     target_sources(mcserverkit_gui PRIVATE resources/macos/icon.icns)
 endif()
 
+# https://stackoverflow.com/questions/13429656/how-to-copy-contents-of-a-directory-into-build-directory-after-make-with-cmake
+add_custom_command(TARGET mcserverkit_gui POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_SOURCE_DIR}/ui ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/ui)
 
 if (MSVC)
     target_compile_definitions(mcserverkit_gui PRIVATE _CRT_SECURE_NO_WARNINGS)
