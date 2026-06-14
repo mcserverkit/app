@@ -19,3 +19,8 @@ document.addEventListener(
   },
   { passive: false },
 );
+
+function popup() {
+  const main = document.getElementById("main");
+  main.classList.add("popup");
+}

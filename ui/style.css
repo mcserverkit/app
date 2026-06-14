@@ -12,6 +12,13 @@ body {
   background-color: #000;
   font-family: "Inter", Arial;
 }
+section {
+  transition: 150ms ease-in-out;
+}
+section.popup {
+  filter: blur(10px);
+  opacity: 50%;
+}
 input,
 button {
   font-size: 14px;
