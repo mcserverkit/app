@@ -61,15 +61,16 @@ section > div {
   gap: 8px;
 }
 #popup {
-  z-index: 999;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #111;
   padding: 25px;
   border-radius: 5px;
-  display: inline-block;
-  transform: scale(0);
-  transition: 150ms ease-in-out;
+  display: none;
 }
 
 #popup.show {
-  transform: scale(1);
+  display: inline-block;
 }
