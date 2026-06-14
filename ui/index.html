@@ -4,19 +4,17 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="popup">
-      <form action="">
-        <input
-          type="text"
-          name="server_name"
-          placeholder="Server Name"
-          required
-        />
-        <input type="checkbox" name="accept_eula" id="eula" required />
-        <label for="eula">Accept Minecraft's EULA</label>
-        <input type="submit" value="Create Server" />
-      </form>
-    </div>
+    <form action="" id="popup">
+      <input
+        type="text"
+        name="server_name"
+        placeholder="Server Name"
+        required
+      />
+      <input type="checkbox" name="accept_eula" id="eula" required />
+      <label for="eula">Accept Minecraft's EULA</label>
+      <input type="submit" value="Create Server" />
+    </form>
     <section id="main">
       <div>
         <button onclick="popup()">Create server</button>
