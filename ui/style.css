@@ -60,3 +60,16 @@ section > div {
   align-items: center;
   gap: 8px;
 }
+#popup {
+  z-index: 999;
+  background-color: #111;
+  padding: 25px;
+  border-radius: 5px;
+  display: inline-block;
+  transform: scale(0);
+  transition: 150ms ease-in-out;
+}
+
+#popup.show {
+  transform: scale(1);
+}
