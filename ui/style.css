@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   color: #fff;
+  font-size: 14px;
   box-sizing: border-box;
 }
 @font-face {
@@ -21,7 +22,6 @@ section.popup {
 }
 input,
 button {
-  font-size: 14px;
   padding: 12px 14px;
   border-radius: 5px;
 }
@@ -42,7 +42,6 @@ button {
   border: none;
   background: #fff;
   cursor: pointer;
-  transition: 150ms ease-in-out;
 }
 button:hover {
   background: #ddd;
@@ -70,7 +69,6 @@ section > div {
   border-radius: 5px;
   display: none;
 }
-
 #popup.show {
   display: inline-block;
 }
