@@ -6,10 +6,15 @@
   <body>
     <div id="popup">
       <form action="">
-        <input type="text" placeholder="Server Name" />
-        <input type="checkbox" name="" id="" />
-
-        <input type="submit" value="" />
+        <input
+          type="text"
+          name="server_name"
+          placeholder="Server Name"
+          required
+        />
+        <input type="checkbox" name="accept_eula" id="eula" required />
+        <label for="eula">Accept Minecraft's EULA</label>
+        <input type="submit" value="Create Server" />
       </form>
     </div>
     <section id="main">
