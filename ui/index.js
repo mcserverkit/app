@@ -20,11 +20,9 @@ document.addEventListener(
   { passive: false },
 );
 
-function popup() {
-  const main = document.getElementById("main");
+function open() {
+  const main = document.getElementsByName("section")[0];
   main.classList.add("popup");
-  const popup0 = document.getElementById("popup");
-  popup0.classList.add("show");
-  //popup0.classList.remove("show");
-  // popup0
+  const popup = document.getElementById("popup");
+  popup.classList.add("show");
 }
