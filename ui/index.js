@@ -20,7 +20,7 @@ document.addEventListener(
   { passive: false },
 );
 
-function open() {
+function openPopup() {
   const main = document.getElementsByName("section")[0];
   main.classList.add("popup");
   const popup = document.getElementById("popup");
