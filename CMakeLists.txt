@@ -14,11 +14,18 @@ FetchContent_Declare(
     GIT_REPOSITORY https://github.com/webview/webview
     GIT_TAG 0.12.0
 )
+FetchContent_Declare(
+	mcserverkit
+	GIT_REPOSITORY https://github.com/mcserverkit/core
+	GIT_TAG v0.1.5
+)
 FetchContent_MakeAvailable(webview)
+FetchContent_MakeAvailable(mcserverkit)
 
 add_executable(mcserverkit_gui MACOSX_BUNDLE WIN32)
 target_sources(mcserverkit_gui PRIVATE src/main.cc)
 target_link_libraries(mcserverkit_gui PRIVATE webview::core)
+target_link_libraries(mcserverkit_gui PRIVATE mcserverkit)
 
 if(WIN32)
     target_sources(mcserverkit_gui PRIVATE resources/windows/resources.rc)
