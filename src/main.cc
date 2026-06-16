@@ -1,4 +1,8 @@
 #include "webview/webview.h"
+extern "C"
+{
+#include "mcserverkit.h"
+}
 
 #include <iostream>
 #include <filesystem>
@@ -37,6 +41,11 @@ int main()
 #endif
         auto file = std::filesystem::absolute("ui/index.html");
         auto html = std::string("file:///") + file.generic_string();
+        w.bind("test", [](auto args)
+               {
+            std::string name = webview::json_parse(args.c_str(), "$[0]", 0);
+            Start(name.data(), NULL);
+            return ""; });
         w.navigate(html);
         w.run();
     }
