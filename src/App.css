@@ -20,31 +20,27 @@ a {
   color: #9cdb7c;
 }
 
-input,
-button {
+form input,
+form button {
   font-family: inherit;
   font-size: inherit;
   padding: 6px 25px;
   border: none;
   border-top: 2px solid #fff;
   border-bottom: 2px solid #888;
-}
-
-input {
   color: #474341;
 }
 
-button {
+form button {
   background-color: #c7bbb6;
   font-weight: 600;
   cursor: pointer;
-  color: #474341;
 }
 
-button:hover {
+form button:hover {
   background-color: #d6cbc6;
 }
 
-button:active {
+form button:active {
   background-color: #b8a9a3;
 }
