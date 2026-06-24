@@ -13,7 +13,9 @@
     "windows": [
       {
         "title": "MCServerKit GUI",
-        "width": 800,
+        "resizable": false,
+        "maximizable": false,
+        "width": 600,
         "height": 600
       }
     ],
