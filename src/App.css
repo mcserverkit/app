@@ -44,3 +44,30 @@ form button:hover {
 form button:active {
   background-color: #b8a9a3;
 }
+
+nav {
+  background-color: #222;
+  height: 50px;
+  padding: 16px 16px 0;
+  margin-bottom: 20px;
+}
+
+nav button {
+  padding: 5px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ddd;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+nav button:hover {
+  color: #fff;
+}
+
+nav button:focus {
+  font-weight: 800;
+  outline: 1px solid #fff;
+}
