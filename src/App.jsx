@@ -34,13 +34,15 @@ function App() {
               />
               <button type="submit">Create Server</button>
             </form>
-            <p>{err}</p>
-            <p>
-              This app is not affiliated with Microsoft,{" "}
-              <a href="https://github.com/mcserverkit" target="_blank">
-                MCServerKit
-              </a>
-            </p>
+            <div>
+              <p>{err}</p>
+              <p>
+                This app is not affiliated with Microsoft,{" "}
+                <a href="https://github.com/mcserverkit" target="_blank">
+                  MCServerKit
+                </a>
+              </p>
+            </div>
           </>
         ) : (
           <>Plugins coming soon...</>
