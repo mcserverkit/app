@@ -14,17 +14,25 @@ a {
   color: #9cdb7c;
 }
 
+input,
 button {
   font-family: inherit;
-  background-color: #c7bbb6;
-  font-weight: 600;
   font-size: inherit;
-  cursor: pointer;
-  color: #474341;
   padding: 6px 25px;
   border: none;
-  border-top: 2px solid #ffffff;
-  border-bottom: 2px solid #808080;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #888;
+}
+
+input {
+  color: #474341;
+}
+
+button {
+  background-color: #c7bbb6;
+  font-weight: 600;
+  cursor: pointer;
+  color: #474341;
 }
 
 button:hover {
