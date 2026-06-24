@@ -3,12 +3,12 @@ import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
+  const [err, setError] = useState("");
   const [name, setName] = useState("");
 
-  async function greet() {
+  async function create_server() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+    setError(await invoke("create_server", { name }));
   }
 
   return (
@@ -17,17 +17,18 @@ function App() {
         className="row"
         onSubmit={(e) => {
           e.preventDefault();
-          greet();
+          create_server();
         }}
       >
         <input
           id="greet-input"
           onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
+          placeholder="Server Name"
         />
-        <button type="submit">Greet</button>
+        <button type="submit">Create Server</button>
       </form>
-      <p>{greetMsg}</p>
+      <p>{err}</p>
+      <p>This app is not affiliated with Microsoft, <a href="https://github.com/mcserverkit" target="_blank">MCServerKit</a></p>
     </>
   );
 }
