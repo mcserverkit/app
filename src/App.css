@@ -3,6 +3,12 @@
   src: url("fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: "Noto Sans";
   background-color: #111;
