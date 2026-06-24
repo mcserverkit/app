@@ -1,0 +1,36 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+}
+
+:root {
+  font-family: "Noto Sans";
+  background-color: #111;
+  font-size: 14px;
+  color: #fff;
+}
+
+a {
+  color: #9cdb7c;
+}
+
+button {
+  font-family: inherit;
+  background-color: #c7bbb6;
+  font-weight: 600;
+  font-size: inherit;
+  cursor: pointer;
+  color: #474341;
+  padding: 6px 25px;
+  border: none;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #808080;
+}
+
+button:hover {
+  background-color: #d6cbc6;
+}
+
+button:active {
+  background-color: #b8a9a3;
+}
