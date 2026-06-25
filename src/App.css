@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Noto Sans";
-  src: url("fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
+  src: url("/fonts/NotoSans-VariableFont_wdth,wght.ttf") format("truetype");
 }
 
 * {
@@ -14,10 +14,14 @@
   background-color: #111;
   font-size: 14px;
   color: #fff;
+  --green: #9cdb7c;
+  --brown-1: #c7bbb6;
+  --brown-2: #d6cbc6;
+  --brown-3: #b8a9a3;
 }
 
 a {
-  color: #9cdb7c;
+  color: var(--green);
 }
 
 form input,
@@ -32,17 +36,17 @@ form button {
 }
 
 form button {
-  background-color: #c7bbb6;
+  background-color: var(--brown-1);
   font-weight: 600;
   cursor: pointer;
 }
 
 form button:hover {
-  background-color: #d6cbc6;
+  background-color: var(--brown-2);
 }
 
 form button:active {
-  background-color: #b8a9a3;
+  background-color: var(--brown-3);
 }
 
 nav {
