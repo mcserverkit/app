@@ -16,12 +16,25 @@ function App() {
       <nav>
         <button onClick={() => setPage("SERVERS")}>Servers</button>
         <button onClick={() => setPage("PLUGINS")}>Plugins</button>
+        <a href="https://github.com/mcserverkit" target="_blank">
+          <button>
+            GitHub
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 8 8"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 2H3V3H1V7H5V5H6V8H0V2Z" />
+              <path d="M4 4V5H3V4H4V3H5V2H6V1H5V0H8V3H7V2H6V3H5V4H4Z" />
+            </svg>
+          </button>
+        </a>
       </nav>
       <main>
         {page === "SERVERS" ? (
           <>
             <form
-              className="row"
               onSubmit={(e) => {
                 e.preventDefault();
                 create_server();
@@ -36,12 +49,6 @@ function App() {
             </form>
             <div>
               <p>{err}</p>
-              <p>
-                This app is not affiliated with Microsoft,{" "}
-                <a href="https://github.com/mcserverkit" target="_blank">
-                  MCServerKit
-                </a>
-              </p>
             </div>
           </>
         ) : (

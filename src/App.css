@@ -67,8 +67,17 @@ nav button {
   background: none;
 }
 
+nav button svg {
+  margin-left: 2px;
+  fill: #ddd;
+}
+
 nav button:hover {
   color: #fff;
+}
+
+nav button:hover svg {
+  fill: #fff;
 }
 
 nav button:focus {
