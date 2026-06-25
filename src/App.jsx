@@ -41,6 +41,7 @@ function App() {
               }}
             >
               <input
+                autoComplete="off"
                 id="greet-input"
                 onChange={(e) => setName(e.currentTarget.value)}
                 placeholder="Server Name"
