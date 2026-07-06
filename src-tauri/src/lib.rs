@@ -1,7 +1,12 @@
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
 fn create_server(name: &str) -> String {
-    format!("Creating {}...", name)
+    let err = mcserverkit::create(name, true);
+    if err != None {
+        format!("Error creating: {:?}", err)
+    } else {
+        format!("Created {}!", name)
+    }
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
