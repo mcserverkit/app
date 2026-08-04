@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "MCServerKit GUI",
+        "title": "MCServerKit",
         "resizable": false,
         "maximizable": false,
         "width": 600,
