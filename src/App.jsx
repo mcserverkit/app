@@ -5,10 +5,17 @@ import "./App.css";
 function App() {
   const [err, setError] = useState("");
   const [name, setName] = useState("");
+  const [servers, setServers] = useState([]);
 
   async function create_server() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setError(await invoke("create_server", { name }));
+    const e = await invoke("create_server", { name });
+
+    if (e != null) {
+      setError(e);
+    } else {
+      setServers([...servers, name]);
+    }
   }
   const [page, setPage] = useState("SERVERS");
   return (
@@ -48,8 +55,11 @@ function App() {
               />
               <button type="submit">Create Server</button>
             </form>
+            <p>{err}</p>
             <div>
-              <p>{err}</p>
+              {servers.map((server) => {
+                return <p>{server}</p>;
+              })}
             </div>
           </>
         ) : (
