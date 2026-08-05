@@ -17,6 +17,11 @@ function App() {
       setServers([...servers, name]);
     }
   }
+
+  async function start_server(server) {
+    await invoke("start_server", { name: server });
+  }
+
   const [page, setPage] = useState("SERVERS");
   return (
     <>
@@ -59,14 +64,20 @@ function App() {
 
             {servers.map((server) => {
               return (
-                <div className="card">
+                <div className="card" key={server}>
                   <section>
                     <h2>{server}</h2>
                     <p>Description unavailable</p>
                   </section>
                   <section>
                     <button>Manage</button>
-                    <button>Start</button>
+                    <button
+                      onClick={() => {
+                        start_server(server);
+                      }}
+                    >
+                      Start
+                    </button>
                   </section>
                 </div>
               );
