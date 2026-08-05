@@ -7,6 +7,14 @@ function App() {
   const [servers, setServers] = useState([]);
   const [page, setPage] = useState(0);
 
+  async function install(version) {
+    const e = await invoke("install", { version });
+
+    if (e != null) {
+      alert(e);
+    }
+  }
+
   async function create_server(name) {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     const e = await invoke("create_server", { name });
@@ -88,6 +96,15 @@ function App() {
                 Minecraft Versions
               </a>
             </p>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                install(e.currentTarget.version.value);
+              }}
+            >
+              <input autoComplete="off" name="version" placeholder="Version" />
+              <button type="submit">Install</button>
+            </form>
           </>
         ) : (
           <>Plugins coming soon...</>
