@@ -77,10 +77,8 @@ nav button {
     }
   }
   &:focus {
-    :focus {
-      font-weight: 800;
-      outline: 1px solid #fff;
-    }
+    font-weight: 800;
+    outline: 1px solid #fff;
   }
 }
 
