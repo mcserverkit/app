@@ -25,7 +25,7 @@ function App() {
     <>
       <nav>
         <button onClick={() => setPage(0)}>Servers</button>
-        <button onClick={() => setPage(1)}>Versions</button>
+        <button onClick={() => setPage(1)}>Installations</button>
         <button onClick={() => setPage(2)}>Plugins</button>
         <a href="https://github.com/mcserverkit" target="_blank">
           <button>
