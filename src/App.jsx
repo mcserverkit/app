@@ -4,10 +4,9 @@ import "./App.css";
 
 function App() {
   const [err, setError] = useState("");
-  const [name, setName] = useState("");
   const [servers, setServers] = useState([]);
 
-  async function create_server() {
+  async function create_server(name) {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     const e = await invoke("create_server", { name });
 
@@ -18,8 +17,8 @@ function App() {
     }
   }
 
-  async function start_server(server) {
-    await invoke("start_server", { name: server });
+  async function start_server(name) {
+    await invoke("start_server", { name });
   }
 
   const [page, setPage] = useState("SERVERS");
@@ -49,13 +48,12 @@ function App() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                create_server();
+                create_server(e.currentTarget.name.value);
               }}
             >
               <input
                 autoComplete="off"
                 id="greet-input"
-                onChange={(e) => setName(e.currentTarget.value)}
                 placeholder="Server Name"
               />
               <button type="submit">Create Server</button>
