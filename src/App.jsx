@@ -51,11 +51,7 @@ function App() {
                 create_server(e.currentTarget.name.value);
               }}
             >
-              <input
-                autoComplete="off"
-                id="greet-input"
-                placeholder="Server Name"
-              />
+              <input autoComplete="off" name="name" placeholder="Server Name" />
               <button type="submit">Create Server</button>
             </form>
             <p>{err}</p>
@@ -82,7 +78,17 @@ function App() {
             })}
           </>
         ) : page === 1 ? (
-          <></>
+          <>
+            <p>
+              See all{" "}
+              <a
+                href="https://minecraft.wiki/w/Java_Edition_version_history"
+                target="_blank"
+              >
+                Minecraft Versions
+              </a>
+            </p>
+          </>
         ) : (
           <>Plugins coming soon...</>
         )}
