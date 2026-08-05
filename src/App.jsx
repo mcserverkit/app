@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   const [err, setError] = useState("");
   const [servers, setServers] = useState([]);
+  const [page, setPage] = useState(0);
 
   async function create_server(name) {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
@@ -20,13 +21,12 @@ function App() {
   async function start_server(name) {
     await invoke("start_server", { name });
   }
-
-  const [page, setPage] = useState("SERVERS");
   return (
     <>
       <nav>
-        <button onClick={() => setPage("SERVERS")}>Servers</button>
-        <button onClick={() => setPage("PLUGINS")}>Plugins</button>
+        <button onClick={() => setPage(0)}>Servers</button>
+        <button onClick={() => setPage(1)}>Versions</button>
+        <button onClick={() => setPage(2)}>Plugins</button>
         <a href="https://github.com/mcserverkit" target="_blank">
           <button>
             GitHub
@@ -43,7 +43,7 @@ function App() {
         </a>
       </nav>
       <main>
-        {page === "SERVERS" ? (
+        {page === 0 ? (
           <>
             <form
               onSubmit={(e) => {
@@ -81,6 +81,8 @@ function App() {
               );
             })}
           </>
+        ) : page === 1 ? (
+          <></>
         ) : (
           <>Plugins coming soon...</>
         )}
