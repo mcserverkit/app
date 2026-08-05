@@ -87,7 +87,7 @@ function App() {
           </>
         ) : page === 1 ? (
           <>
-            <p>
+            {/*<p>
               See all{" "}
               <a
                 href="https://minecraft.wiki/w/Java_Edition_version_history"
@@ -95,7 +95,7 @@ function App() {
               >
                 Minecraft Versions
               </a>
-            </p>
+            </p>*/}
             <form
               onSubmit={(e) => {
                 e.preventDefault();
