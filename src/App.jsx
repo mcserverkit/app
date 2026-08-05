@@ -56,11 +56,21 @@ function App() {
               <button type="submit">Create Server</button>
             </form>
             <p>{err}</p>
-            <div>
-              {servers.map((server) => {
-                return <p>{server}</p>;
-              })}
-            </div>
+
+            {servers.map((server) => {
+              return (
+                <div className="card">
+                  <section>
+                    <h2>{server}</h2>
+                    <p>Description unavailable</p>
+                  </section>
+                  <section>
+                    <button>Manage</button>
+                    <button>Start</button>
+                  </section>
+                </div>
+              );
+            })}
           </>
         ) : (
           <>Plugins coming soon...</>

@@ -15,7 +15,7 @@
   background-color: #111;
   font-size: 14px;
   color: #fff;
-  --green: #9cdb7c;
+  --green: #2aca52;
   --brown-1: #c7bbb6;
   --brown-2: #d6cbc6;
   --brown-3: #b8a9a3;
@@ -89,4 +89,31 @@ main {
   justify-content: center;
   padding: 8px;
   gap: 16px;
+}
+.card {
+  display: flex;
+  flex-direction: row;
+  background: #222;
+  padding: 24px;
+  gap: 24px;
+  & > section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    & > p {
+      color: #aaa;
+    }
+    & > button {
+      cursor: pointer;
+      background-color: #333;
+      color: #fff;
+      display: block;
+      padding: 8px 4px;
+      width: 120px;
+    }
+
+    & > button:last-child {
+      background-color: var(--green);
+    }
+  }
 }
