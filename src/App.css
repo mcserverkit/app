@@ -44,14 +44,12 @@ form button {
   background-color: var(--brown-1);
   font-weight: 600;
   cursor: pointer;
-}
-
-form button:hover {
-  background-color: var(--brown-2);
-}
-
-form button:active {
-  background-color: var(--brown-3);
+  &:hover {
+    background-color: var(--brown-2);
+  }
+  &:active {
+    background-color: var(--brown-3);
+  }
 }
 
 nav {
@@ -68,24 +66,22 @@ nav button {
   color: #ddd;
   cursor: pointer;
   background: none;
-}
-
-nav button svg {
-  margin-left: 2px;
-  fill: #ddd;
-}
-
-nav button:hover {
-  color: #fff;
-}
-
-nav button:hover svg {
-  fill: #fff;
-}
-
-nav button:focus {
-  font-weight: 800;
-  outline: 1px solid #fff;
+  & > svg {
+    margin-left: 2px;
+    fill: #ddd;
+  }
+  &:hover {
+    color: #fff;
+    & > svg {
+      fill: #fff;
+    }
+  }
+  &:focus {
+    :focus {
+      font-weight: 800;
+      outline: 1px solid #fff;
+    }
+  }
 }
 
 main {
